@@ -1,6 +1,15 @@
 # 2021CCKS-QA-Task
 A solution to 2021-CCKS-QA-Task(https://tianchi.aliyun.com/competition/entrance/531904/introduction)
 
+#####写在前面
+这个比赛结束已经大半年了，期间参赛者似乎都没有做方案的开源，讨论区也很冷清。
+其实自结束以来一直都想做开源工作，分享自己在算法比赛过程中的思路，奈何学业科研繁忙一直搁置。最近因为机缘巧合，打算践行开源，给有需要的同学，提供一些思路（抛砖引玉233）。同时也希望NLP开源社区可以越来越活跃。
+最后这个比赛是我自学NLP之后认真筹备的第一个项目，构建代码时做了很多尝试，比较乱，望见谅。
+
+____________________________________________
+
+
+
 # CCKS2021 运营商知识图谱推理问答 - 湖人总冠军方案
 
 
@@ -206,6 +215,57 @@ $$
 
 此外，由于实验室的学业压力，仍有很多方案没有进行尝试，同时很多方案尝试了但没有提升结果，与前排大佬也有不少差距。希望吸取本次比赛的经验和教训，继续提升自身的实力。
 
+
+### 8 附录
+
+##### 8.1 项目目录树
+
+```sh
+.
+└── code
+    ├── data.py  # 数据模块
+    ├── data_argument.py  # 数据增强模块
+    ├── doc2unix.py  # 修改回车符
+    ├── docker_process.py  # docker中预处理模块
+    ├── inference.py  # 推理模块
+    ├── model.py  # 模型结构
+    ├── module.py  # 必要模块
+    ├── run.sh  # 一键数据处理、训练、推理
+    ├── statistic.py  # 数据统计模块
+    ├── test.py  # 测试类
+    ├── train.py  # 多任务学习训练模块
+    ├── train_evaluate_constraint.py  # 命名实体识别训练模块
+    ├── triples.py  # 知识图谱与三元组处理模块
+    └── utils.py  # 工具类
+```
+
+##### 8.2 环境依赖
+
+```
+bert4keras==0.7.7
+jieba==0.42.1
+Keras==2.3.1
+nlpcda==2.5.6
+numpy==1.16.5
+openpyxl==3.0.7
+pandas==1.2.3
+scikit-learn==0.23.2
+tensorboard==1.14.0
+tensorflow-gpu==1.14.0
+textda==0.1.0.6
+torch==1.5.0
+tqdm==4.50.2
+transformers==4.0.1
+xlrd==2.0.1
+rdflib==5.0.0
+nvidia-ml-py3==7.352.0
+```
+
+##### 8.3 运行
+
+```shell
+sh run.sh
+```
 
 
 
